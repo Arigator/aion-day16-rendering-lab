@@ -19,11 +19,11 @@ export default function BlogIndexPage() {
       <RenderingSignalCard
         strategy="SSG"
         timestamp={renderedAt}
-        whoMadeIt="Daftar posting ini dibuat oleh dev team,"
-        whenMadeIt="waktu build — semua post di-list saat itu."
+        whoMadeIt="This post list was built by the dev team,"
+        whenMadeIt="at build time — every post was listed right then."
         timestampLabel="Built"
-        experimentAction="Refresh, lalu edit posts.json dan refresh lagi tanpa rebuild."
-        expectedResult="Konten TIDAK ikut berubah — perlu rebuild dulu."
+        experimentAction="Refresh, then edit posts.json and refresh again without rebuilding."
+        expectedResult="The content does NOT change — it needs a rebuild first."
       />
 
       {/* Blog Posts List */}
