@@ -29,7 +29,7 @@ export default function ViewRawHtmlButton() {
         disabled={loading}
         className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold bg-strategy-csr-bg text-strategy-csr-text border border-strategy-csr-border hover:shadow-md transition-all cursor-pointer disabled:opacity-50"
       >
-        {loading ? "Loading..." : "🔍 View raw HTML from the server"}
+        {loading ? "Loading..." : "🔍 View the raw HTML from the server"}
       </button>
 
       {isOpen && (
@@ -55,7 +55,7 @@ export default function ViewRawHtmlButton() {
             {/* Callout */}
             <div className="mx-5 mt-4 p-3 rounded-lg bg-strategy-csr-bg border border-dashed border-strategy-csr-border text-xs text-strategy-csr-text leading-relaxed">
               <strong>Notice:</strong> the text &quot;Introduction to Next.js App Router&quot;, &quot;42%&quot;, and the learner&apos;s name are <strong>NOT HERE</strong>.
-              That&apos;s proof of CSR — the server only sends a shell; your browser builds the content.
+              That&apos;s proof of CSR — the server only sent a shell; your browser built the content.
             </div>
 
             {/* HTML Content */}

@@ -40,8 +40,8 @@ export default async function InstructorDetailPage({ params }: PageProps) {
       <RenderingSignalCard
         strategy="SSR"
         timestamp={serverTime}
-        whoMadeIt="This page was JUST built by the server,"
-        whenMadeIt="right when you requested it. Every request rebuilds it."
+        whoMadeIt="This page was built JUST NOW by the server,"
+        whenMadeIt="the moment you requested it. Every request rebuilds it."
         timestampLabel="Server time"
         experimentAction="Refresh this page 3 times in a row."
         expectedResult="The timestamp CHANGES on every refresh."

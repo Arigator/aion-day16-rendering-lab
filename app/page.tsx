@@ -30,7 +30,7 @@ export default function HomePage() {
         strategy="SSG"
         timestamp={renderedAt}
         whoMadeIt="This page was built by the dev team,"
-        whenMadeIt="at build time — before you opened it."
+        whenMadeIt="at build time — before you ever opened it."
         timestampLabel="Built"
         experimentAction="Refresh this page a few times."
         expectedResult="The timestamp does NOT change at all."

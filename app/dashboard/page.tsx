@@ -56,7 +56,7 @@ export default function LearnerDashboardPage() {
       <RenderingSignalCard
         strategy="CSR"
         timestamp={clientTime || "Loading..."}
-        whoMadeIt="This dashboard's content was built by YOUR browser,"
+        whoMadeIt="This dashboard content was built by YOUR BROWSER,"
         whenMadeIt="after the page loaded. The server only sent an empty shell."
         timestampLabel="Client time"
         experimentAction="Click the 'View raw HTML' button below."

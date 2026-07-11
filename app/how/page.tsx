@@ -10,20 +10,20 @@ export default function HowPage() {
       <div className="border-b border-lilac pb-6">
         <h1 className="text-3xl font-extrabold text-navy">How rendering works in this lab</h1>
         <p className="text-sm text-gray-600 mt-2 max-w-2xl leading-relaxed">
-          This page compares the 4 rendering strategies used in this app.
-          Each strategy determines <strong>when</strong> and <strong>where</strong> a page&apos;s HTML is built.
+          This page compares the 4 rendering strategies used in this application.
+          Each strategy determines <strong>when</strong> and <strong>where</strong> the page&apos;s HTML gets built.
         </p>
       </div>
 
       {/* Grid of 4 Signal Cards */}
       <section className="space-y-4">
-        <h2 className="text-lg font-bold text-navy">Example signal card for each strategy</h2>
+        <h2 className="text-lg font-bold text-navy">Example signal cards for each strategy</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <RenderingSignalCard
             strategy="SSG"
             timestamp={exampleTimestamp}
             whoMadeIt="This page was built by the dev team,"
-            whenMadeIt="at build time — before you opened it."
+            whenMadeIt="at build time — before you ever opened it."
             timestampLabel="Built"
             experimentAction="Refresh this page a few times."
             expectedResult="The timestamp does NOT change at all."
@@ -31,8 +31,8 @@ export default function HowPage() {
           <RenderingSignalCard
             strategy="SSR"
             timestamp={exampleTimestamp}
-            whoMadeIt="This page was JUST built by the server,"
-            whenMadeIt="right when you requested it. Every request rebuilds it."
+            whoMadeIt="This page was built JUST NOW by the server,"
+            whenMadeIt="the moment you requested it. Every request rebuilds it."
             timestampLabel="Server time"
             experimentAction="Refresh this page 3 times in a row."
             expectedResult="The timestamp CHANGES on every refresh."
@@ -40,7 +40,7 @@ export default function HowPage() {
           <RenderingSignalCard
             strategy="CSR"
             timestamp={exampleTimestamp}
-            whoMadeIt="This dashboard's content was built by YOUR browser,"
+            whoMadeIt="This dashboard content was built by YOUR BROWSER,"
             whenMadeIt="after the page loaded. The server only sent an empty shell."
             timestampLabel="Client time"
             experimentAction="Click the 'View raw HTML' button below."
@@ -77,8 +77,8 @@ export default function HowPage() {
               <tr className="bg-strategy-ssg-bg/30">
                 <td className="px-4 py-3 font-bold text-strategy-ssg-text">SSG</td>
                 <td className="px-4 py-3">During <code className="font-mono bg-white/50 px-1 rounded">npm run build</code></td>
-                <td className="px-4 py-3">No (HTML is ready-made)</td>
-                <td className="px-4 py-3">Blogs, marketing pages, docs</td>
+                <td className="px-4 py-3">No (the HTML is already done)</td>
+                <td className="px-4 py-3">Blog, marketing page, docs</td>
                 <td className="px-4 py-3"><code className="font-mono">/blog</code></td>
                 <td className="px-4 py-3"><Link href="/blog" className="text-purple font-semibold hover:underline">Try it →</Link></td>
               </tr>
@@ -94,7 +94,7 @@ export default function HowPage() {
                 <td className="px-4 py-3 font-bold text-strategy-csr-text">CSR</td>
                 <td className="px-4 py-3">In the browser, after JS loads</td>
                 <td className="px-4 py-3"><strong>Yes</strong> — without JS, the page is empty</td>
-                <td className="px-4 py-3">Interactive dashboards, app-like UIs</td>
+                <td className="px-4 py-3">Interactive dashboards, app-like UI</td>
                 <td className="px-4 py-3"><code className="font-mono">/dashboard</code></td>
                 <td className="px-4 py-3"><Link href="/dashboard" className="text-purple font-semibold hover:underline">Try it →</Link></td>
               </tr>
@@ -103,7 +103,7 @@ export default function HowPage() {
                 <td className="px-4 py-3">At build, then regenerated periodically</td>
                 <td className="px-4 py-3">No</td>
                 <td className="px-4 py-3">E-commerce, catalogs, semi-static content</td>
-                <td className="px-4 py-3"><em className="text-gray-400">Not here yet — an exercise!</em></td>
+                <td className="px-4 py-3"><em className="text-gray-400">Not here yet — exercise!</em></td>
                 <td className="px-4 py-3"><span className="text-gray-400 text-xs italic">Toggling exercise</span></td>
               </tr>
             </tbody>
@@ -113,7 +113,7 @@ export default function HowPage() {
 
       {/* Timeline Diagram */}
       <section className="space-y-4">
-        <h2 className="text-lg font-bold text-navy">Timeline: when is the content built?</h2>
+        <h2 className="text-lg font-bold text-navy">Timeline: when does the content get built?</h2>
         <div className="rounded-xl border border-lilac bg-white p-6 overflow-x-auto">
           <div className="flex items-start justify-between min-w-[600px] relative">
             {/* Horizontal line */}
@@ -136,7 +136,7 @@ export default function HowPage() {
               <p className="mt-2 text-xs font-bold text-navy">Deploy</p>
               <p className="text-[10px] text-gray-500 mt-1 max-w-[120px]">Static HTML is uploaded to the CDN/server</p>
               <div className="mt-2">
-                <span className="block text-[10px] text-gray-400 italic">No new render</span>
+                <span className="block text-[10px] text-gray-400 italic">No new rendering</span>
               </div>
             </div>
 
@@ -144,7 +144,7 @@ export default function HowPage() {
             <div className="flex flex-col items-center text-center z-10 w-1/4">
               <div className="w-12 h-12 rounded-full bg-strategy-ssr-bg border-2 border-strategy-ssr-border flex items-center justify-center text-lg font-bold text-strategy-ssr-text">3</div>
               <p className="mt-2 text-xs font-bold text-navy">User Request</p>
-              <p className="text-[10px] text-gray-500 mt-1 max-w-[120px]">The browser&apos;s request hits the server</p>
+              <p className="text-[10px] text-gray-500 mt-1 max-w-[120px]">A browser request reaches the server</p>
               <div className="mt-2 space-y-0.5">
                 <span className="block text-[10px] font-semibold px-2 py-0.5 rounded bg-strategy-ssr-bg text-strategy-ssr-text">SSR ✓</span>
                 <span className="block text-[10px] font-semibold px-2 py-0.5 rounded bg-strategy-isr-bg text-strategy-isr-text">ISR ✓ (regen)</span>
@@ -167,7 +167,7 @@ export default function HowPage() {
       {/* Closing */}
       <section className="border-t border-lilac pt-6 text-sm text-gray-600 leading-relaxed space-y-2">
         <p>
-          Now visit these pages directly to feel the differences for yourself:
+          Now go visit these pages yourself to feel the differences:
         </p>
         <ul className="list-disc list-inside space-y-1">
           <li><Link href="/blog" className="text-purple font-semibold hover:underline">/blog</Link> — SSG, the content is already in the HTML</li>
