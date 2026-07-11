@@ -29,11 +29,11 @@ export default function HomePage() {
       <RenderingSignalCard
         strategy="SSG"
         timestamp={renderedAt}
-        whoMadeIt="Halaman ini dibuat oleh dev team,"
-        whenMadeIt="waktu build — sebelum kamu buka."
+        whoMadeIt="This page was built by the dev team,"
+        whenMadeIt="at build time — before you ever opened it."
         timestampLabel="Built"
-        experimentAction="Refresh halaman ini beberapa kali."
-        expectedResult="Timestamp TIDAK berubah sama sekali."
+        experimentAction="Refresh this page a few times."
+        expectedResult="The timestamp does NOT change at all."
       />
 
       {/* Feature Cards Section */}

@@ -39,11 +39,11 @@ export default async function BlogPostDetailPage({ params }: PageProps) {
       <RenderingSignalCard
         strategy="SSG"
         timestamp={renderedAt}
-        whoMadeIt="Halaman post ini dibuat oleh dev team,"
-        whenMadeIt="waktu build — via generateStaticParams."
+        whoMadeIt="This post page was built by the dev team,"
+        whenMadeIt="at build time — via generateStaticParams."
         timestampLabel="Built"
-        experimentAction="Refresh halaman ini."
-        expectedResult="Timestamp TETAP sama — sudah jadi HTML statis."
+        experimentAction="Refresh this page."
+        expectedResult="The timestamp STAYS the same — it's already static HTML."
       />
 
       {/* Main Post Content */}

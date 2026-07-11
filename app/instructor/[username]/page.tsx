@@ -40,11 +40,11 @@ export default async function InstructorDetailPage({ params }: PageProps) {
       <RenderingSignalCard
         strategy="SSR"
         timestamp={serverTime}
-        whoMadeIt="Halaman ini dibuat BARUSAN oleh server,"
-        whenMadeIt="tepat saat kamu request. Setiap request bikin ulang."
+        whoMadeIt="This page was built JUST NOW by the server,"
+        whenMadeIt="the moment you requested it. Every request rebuilds it."
         timestampLabel="Server time"
-        experimentAction="Refresh halaman ini 3 kali berturut-turut."
-        expectedResult="Timestamp BERUBAH tiap refresh."
+        experimentAction="Refresh this page 3 times in a row."
+        expectedResult="The timestamp CHANGES on every refresh."
       />
 
       {/* Instructor Profile Details */}
