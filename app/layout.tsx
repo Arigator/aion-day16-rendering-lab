@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import RenderingNavBar from "@/app/components/RenderingNavBar";
+import DevModeWarning from "@/app/components/DevModeWarning";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -18,6 +19,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body className="flex flex-col min-h-screen bg-white text-navy font-sans antialiased">
+        <DevModeWarning />
+
         {/* Sticky Header Nav */}
         <header className="sticky top-0 z-50 w-full border-b border-lilac bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
           <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">

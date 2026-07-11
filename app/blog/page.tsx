@@ -22,8 +22,8 @@ export default function BlogIndexPage() {
         whoMadeIt="This post list was built by the dev team,"
         whenMadeIt="at build time — every post was listed right then."
         timestampLabel="Built"
-        experimentAction="Refresh, then edit posts.json and refresh again without rebuilding."
-        expectedResult="The content does NOT change — it needs a rebuild first."
+        experimentAction="Refresh this page 3 times, then compare with the SSR page."
+        expectedResult="This timestamp stays FROZEN. The SSR page changes every time."
       />
 
       {/* Blog Posts List */}
