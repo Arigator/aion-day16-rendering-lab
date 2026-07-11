@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useEffect } from "react";
+import RenderingSignalCard from "@/app/components/RenderingSignalCard";
+import ViewRawHtmlButton from "@/app/components/ViewRawHtmlButton";
 
 interface Course {
   id: string;
@@ -43,21 +45,26 @@ export default function LearnerDashboardPage() {
   return (
     <div className="space-y-8 py-4">
       {/* Page Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-lilac pb-6">
-        <div>
-          <h1 className="text-3xl font-extrabold text-navy">Learner Dashboard</h1>
-          <p className="text-sm text-gray-500 mt-1">
-            Track your progress across enrolled classes.
-          </p>
-        </div>
-        <div>
-          {/* CSR Signal Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-semibold bg-orange-50 border-l-4 border-orange-500 text-orange-800 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
-            <span>Rendered client-side at: <code className="text-orange-950 font-mono">{clientTime || "Loading..."}</code> (CSR Client Time)</span>
-          </div>
-        </div>
+      <div className="border-b border-lilac pb-6">
+        <h1 className="text-3xl font-extrabold text-navy">Learner Dashboard</h1>
+        <p className="text-sm text-gray-500 mt-1">
+          Track your progress across enrolled classes.
+        </p>
       </div>
+
+      {/* CSR Signal Card */}
+      <RenderingSignalCard
+        strategy="CSR"
+        timestamp={clientTime || "Loading..."}
+        whoMadeIt="Isi dashboard ini dibuat sama BROWSER-mu,"
+        whenMadeIt="setelah halaman ter-load. Server cuma kirim shell kosong."
+        timestampLabel="Client time"
+        experimentAction="Klik tombol 'Lihat HTML mentah' di bawah."
+        expectedResult="Nama kamu dan progress-nya TIDAK ada di HTML."
+      />
+
+      {/* View Raw HTML Button */}
+      <ViewRawHtmlButton />
 
       {isLoading ? (
         <div className="flex flex-col items-center justify-center py-20 space-y-4">

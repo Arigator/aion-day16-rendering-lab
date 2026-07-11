@@ -1,5 +1,6 @@
 import Link from "next/link";
 import posts from "@/data/posts.json";
+import RenderingSignalCard from "@/app/components/RenderingSignalCard";
 
 export default function BlogIndexPage() {
   const renderedAt = new Date().toISOString();
@@ -7,21 +8,23 @@ export default function BlogIndexPage() {
   return (
     <div className="space-y-8 py-4">
       {/* Page Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-lilac pb-6">
-        <div>
-          <h1 className="text-3xl font-extrabold text-navy">BelajarCepat Blog</h1>
-          <p className="text-sm text-gray-500 mt-1">
-            Explore insights about web technologies, performance, and education.
-          </p>
-        </div>
-        <div>
-          {/* SSG Signal Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-semibold bg-lilac/30 border-l-4 border-blue-600 text-navy shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-blue-600"></span>
-            <span>Rendered at: <code className="text-purple font-mono">{renderedAt}</code> (SSG Build Time)</span>
-          </div>
-        </div>
+      <div className="border-b border-lilac pb-6">
+        <h1 className="text-3xl font-extrabold text-navy">BelajarCepat Blog</h1>
+        <p className="text-sm text-gray-500 mt-1">
+          Explore insights about web technologies, performance, and education.
+        </p>
       </div>
+
+      {/* SSG Signal Card */}
+      <RenderingSignalCard
+        strategy="SSG"
+        timestamp={renderedAt}
+        whoMadeIt="Daftar posting ini dibuat oleh dev team,"
+        whenMadeIt="waktu build — semua post di-list saat itu."
+        timestampLabel="Built"
+        experimentAction="Refresh, lalu edit posts.json dan refresh lagi tanpa rebuild."
+        expectedResult="Konten TIDAK ikut berubah — perlu rebuild dulu."
+      />
 
       {/* Blog Posts List */}
       <div className="space-y-6">

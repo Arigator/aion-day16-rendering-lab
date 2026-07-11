@@ -3,6 +3,7 @@ export const dynamic = 'force-dynamic';
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import instructors from "@/data/instructors.json";
+import RenderingSignalCard from "@/app/components/RenderingSignalCard";
 
 interface PageProps {
   params: Promise<{ username: string }>;
@@ -25,22 +26,26 @@ export default async function InstructorDetailPage({ params }: PageProps) {
 
   return (
     <div className="space-y-8 py-4">
-      {/* Navigation & Signal Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-lilac pb-6">
+      {/* Navigation */}
+      <div className="border-b border-lilac pb-4">
         <Link
           href="/"
           className="text-sm font-semibold text-purple hover:underline inline-flex items-center gap-1"
         >
           &larr; Back to Home
         </Link>
-        <div>
-          {/* SSR Signal Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-semibold bg-lilac/30 border-l-4 border-purple text-navy shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-purple animate-pulse"></span>
-            <span>Server time now: <code className="text-purple font-mono">{serverTime}</code> (SSR Live Request)</span>
-          </div>
-        </div>
       </div>
+
+      {/* SSR Signal Card */}
+      <RenderingSignalCard
+        strategy="SSR"
+        timestamp={serverTime}
+        whoMadeIt="Halaman ini dibuat BARUSAN oleh server,"
+        whenMadeIt="tepat saat kamu request. Setiap request bikin ulang."
+        timestampLabel="Server time"
+        experimentAction="Refresh halaman ini 3 kali berturut-turut."
+        expectedResult="Timestamp BERUBAH tiap refresh."
+      />
 
       {/* Instructor Profile Details */}
       <div className="max-w-2xl mx-auto bg-white border border-lilac rounded-2xl p-8 shadow-sm flex flex-col md:flex-row items-center md:items-start gap-6">

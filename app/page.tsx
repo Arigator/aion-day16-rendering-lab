@@ -1,7 +1,10 @@
 import Link from "next/link";
 import instructors from "@/data/instructors.json";
+import RenderingSignalCard from "@/app/components/RenderingSignalCard";
 
 export default function HomePage() {
+  const renderedAt = new Date().toISOString();
+
   return (
     <div className="space-y-16 py-8">
       {/* Hero Section */}
@@ -21,6 +24,17 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+
+      {/* SSG Signal Card */}
+      <RenderingSignalCard
+        strategy="SSG"
+        timestamp={renderedAt}
+        whoMadeIt="Halaman ini dibuat oleh dev team,"
+        whenMadeIt="waktu build — sebelum kamu buka."
+        timestampLabel="Built"
+        experimentAction="Refresh halaman ini beberapa kali."
+        expectedResult="Timestamp TIDAK berubah sama sekali."
+      />
 
       {/* Feature Cards Section */}
       <section className="space-y-8">

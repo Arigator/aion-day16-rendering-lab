@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RenderingNavBar from "@/app/components/RenderingNavBar";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -40,6 +41,9 @@ export default function RootLayout({
             </nav>
           </div>
         </header>
+
+        {/* Rendering Strategy Sub-Navigation */}
+        <RenderingNavBar />
 
         {/* Main Content Area */}
         <main className="flex-1 max-w-5xl w-full mx-auto px-4 py-8">

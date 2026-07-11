@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import posts from "@/data/posts.json";
+import RenderingSignalCard from "@/app/components/RenderingSignalCard";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -24,22 +25,26 @@ export default async function BlogPostDetailPage({ params }: PageProps) {
 
   return (
     <div className="space-y-6 py-4">
-      {/* Navigation & Signal Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-lilac pb-6">
+      {/* Navigation */}
+      <div className="border-b border-lilac pb-4">
         <Link
           href="/blog"
           className="text-sm font-semibold text-purple hover:underline inline-flex items-center gap-1"
         >
           &larr; Back to blog
         </Link>
-        <div>
-          {/* SSG Signal Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-semibold bg-lilac/30 border-l-4 border-blue-600 text-navy shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-blue-600"></span>
-            <span>Rendered at: <code className="text-purple font-mono">{renderedAt}</code> (SSG Build Time)</span>
-          </div>
-        </div>
       </div>
+
+      {/* SSG Signal Card */}
+      <RenderingSignalCard
+        strategy="SSG"
+        timestamp={renderedAt}
+        whoMadeIt="Halaman post ini dibuat oleh dev team,"
+        whenMadeIt="waktu build — via generateStaticParams."
+        timestampLabel="Built"
+        experimentAction="Refresh halaman ini."
+        expectedResult="Timestamp TETAP sama — sudah jadi HTML statis."
+      />
 
       {/* Main Post Content */}
       <article className="space-y-6 max-w-3xl mx-auto">
