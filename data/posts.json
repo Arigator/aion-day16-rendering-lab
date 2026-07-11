@@ -1,0 +1,30 @@
+[
+  {
+    "slug": "why-modern-rendering-matters",
+    "title": "Why modern rendering strategies matter",
+    "excerpt": "SSG, SSR, CSR — pick the wrong one and users feel it.",
+    "date": "2026-06-01",
+    "body": "Understanding how your pages are rendered is one of the most critical parts of modern web development. When Next.js serves a page, it can use static site generation, server-side rendering, or client-side rendering. Each of these options impacts performance, SEO, and developer experience in distinct ways.\n\nFor content that rarely changes, Static Site Generation (SSG) is highly optimized since the HTML is generated once at build time. On the other hand, highly dynamic user-specific pages benefit from Server-Side Rendering (SSR) or Client-Side Rendering (CSR).\n\nChoosing the wrong rendering strategy can lead to slow initial load times, poor search engine ranking, or high server costs. This lab is designed to show you exactly how to analyze and toggle these rendering strategies in a Next.js sandbox."
+  },
+  {
+    "slug": "diving-deep-into-isr",
+    "title": "Diving deep into Incremental Static Regeneration",
+    "excerpt": "Get the benefits of static with the freshness of dynamic data.",
+    "date": "2026-06-05",
+    "body": "Incremental Static Regeneration (ISR) is a powerful hybrid rendering strategy. It allows developers to update static pages after the site has been built and deployed, without needing to rebuild the entire site.\n\nWith ISR, you can define a revalidation interval. When a user requests a page after that interval, Next.js will trigger a background regeneration of the static HTML. While it regenerates, the user is served the stale (old) static page, ensuring instant response times.\n\nOnce the build is updated in the background, subsequent requests will receive the newly generated page. This makes ISR perfect for blogs, e-commerce product catalogs, and documentation sites where data updates periodically but does not require sub-second live consistency."
+  },
+  {
+    "slug": "mastering-client-components",
+    "title": "Mastering client-side rendering in Next.js",
+    "excerpt": "When and how to use the 'use client' directive effectively.",
+    "date": "2026-06-10",
+    "body": "In Next.js, components are Server Components by default. This is a major shift from React's traditional SPA architecture where everything was rendered on the client side. Server Components reduce bundle sizes by keeping dependencies on the server.\n\nHowever, when you need interactivity—such as event listeners, React state, effects, or browser-only APIs—you must opt into Client-Side Rendering (CSR) using the 'use client' directive. This tells Next.js to package the component and its children for client-side execution.\n\nIt is important to place the 'use client' boundary as far down the component tree as possible. This ensures that the majority of your page remains static and lightweight, while only the interactive segments run in the user's browser."
+  },
+  {
+    "slug": "server-side-rendering-explained",
+    "title": "Server-side rendering explained",
+    "excerpt": "How dynamic page generation on the server boosts SEO and interactive speeds.",
+    "date": "2026-06-15",
+    "body": "Server-Side Rendering (SSR) is the process of generating the full HTML for a page on the server in response to every single incoming request. This ensures that users always see the latest data immediately upon loading the page.\n\nSSR is ideal for personalized dashboards, social media feeds, or financial tickers where real-time consistency is mandatory. By generating the content on the server, search engine crawlers receive fully populated HTML, making SSR excellent for SEO-sensitive dynamic content.\n\nHowever, SSR comes with trade-offs. Generating pages on demand increases the time-to-first-byte (TTFB) and puts continuous compute load on your server. Developers must weigh these factors against the requirement for real-time data accuracy."
+  }
+]

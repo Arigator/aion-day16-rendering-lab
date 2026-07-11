@@ -1,0 +1,20 @@
+[
+  {
+    "username": "sinta",
+    "name": "Sinta Wijaya",
+    "bio": "Senior frontend engineer focused on web performance.",
+    "expertise": ["Web performance", "Next.js", "Design systems"]
+  },
+  {
+    "username": "bagas",
+    "name": "Bagas Pratama",
+    "bio": "Full-stack developer teaching Node.js and databases.",
+    "expertise": ["Node.js", "PostgreSQL", "System design"]
+  },
+  {
+    "username": "rani",
+    "name": "Rani Sari",
+    "bio": "UX engineer bridging design and code.",
+    "expertise": ["Accessibility", "React", "Design tokens"]
+  }
+]
