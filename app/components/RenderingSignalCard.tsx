@@ -107,11 +107,11 @@ export default function RenderingSignalCard({
       {/* Dashed instruction box */}
       <div className="border border-dashed border-current/30 rounded-lg p-3 space-y-1.5 text-xs bg-white/20">
         <div>
-          <span className="font-extrabold uppercase mr-1">Coba:</span>
+          <span className="font-extrabold uppercase mr-1">Try:</span>
           <span className="opacity-90">{experimentAction}</span>
         </div>
         <div>
-          <span className="font-extrabold uppercase mr-1">Hasil:</span>
+          <span className="font-extrabold uppercase mr-1">Result:</span>
           <span className="opacity-90">{expectedResult}</span>
         </div>
       </div>

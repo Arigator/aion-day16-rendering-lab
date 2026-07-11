@@ -56,11 +56,11 @@ export default function LearnerDashboardPage() {
       <RenderingSignalCard
         strategy="CSR"
         timestamp={clientTime || "Loading..."}
-        whoMadeIt="Isi dashboard ini dibuat sama BROWSER-mu,"
-        whenMadeIt="setelah halaman ter-load. Server cuma kirim shell kosong."
+        whoMadeIt="This dashboard's content was built by YOUR browser,"
+        whenMadeIt="after the page loaded. The server only sent an empty shell."
         timestampLabel="Client time"
-        experimentAction="Klik tombol 'Lihat HTML mentah' di bawah."
-        expectedResult="Nama kamu dan progress-nya TIDAK ada di HTML."
+        experimentAction="Click the 'View raw HTML' button below."
+        expectedResult="Your name and progress are NOT in the HTML."
       />
 
       {/* View Raw HTML Button */}
