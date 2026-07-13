@@ -1,3 +1,4 @@
+export const revalidate = 30;
 import Link from "next/link";
 import posts from "@/data/posts.json";
 import RenderingSignalCard from "@/app/components/RenderingSignalCard";
